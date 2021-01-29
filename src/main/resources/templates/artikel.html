@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Demo für OOAD</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div th:replace="~{fragments/nav :: nav}"></div>
+    <div class="container">
+        <h1 th:text="${artikel.name}"></h1>
+        <p th:text="${artikel.beschreibung}"></p>
+        <h6 th:text="${artikel.preis}"></h6>
+        
+        <button class="btn btn-dark" onclick="idInWarenkorb()">In den Warenkorb</button>
+
+        
+    </div>
+    <script>
+        function idInWarenkorb(){
+            var artikelId = "[[${artikel.id}]]";
+            alert('Artikel mit id: ' + artikelId + ' wird in den Warenkorb gelegt!');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

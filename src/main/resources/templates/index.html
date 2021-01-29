@@ -7,9 +7,33 @@
 </head>
 <body>
     <div th:replace="~{fragments/nav :: nav}"></div>
-    <p th:text=" 'Hello, ' + ${name} + '!' " />
-    <p th:text=" ${willkommen} " />
-    <p th:text=" 'Number:' + ${num} " />
+    <div class="container">
+        <!--<p th:text=" 'Hello, ' + ${name} + '!' " />-->
+        <p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
+        
+        <!-- LOGOUT -->
+        <form th:action="@{/logout}" method="POST">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+        
+        <!--<p th:text=" ${willkommen} " />
+        <p th:text=" 'Number:' + ${num} " /> -->
+
+
+        <!--ERSTELLTE ARTIKEL ANZEIGEN-->
+        <div th:each="artikel : ${artikelListe}" class="card mt-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 th:text="${artikel.name}" class="card-title"></h5>
+                <h6 th:text="${artikel.beschreibung}" class="card-subtitle mb-2 text-muted"></h6>
+                <p th:text="${artikel.preis}" class="card-text"></p>
+                <!--<a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>-->
+            </div>
+        </div>
+
+
+        
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>

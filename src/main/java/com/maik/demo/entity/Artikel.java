@@ -1,16 +1,35 @@
 package com.maik.demo.entity;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 public class Artikel {
 	private int id;
 	private String name;
 	private String beschreibung;
 	private double preis;
 	
+	private String bild;
+	
+	//Ohne Bild
 	public Artikel(int id, String name, String beschreibung, double preis) {
 		this.id = id;
 		this.name = name;
 		this.beschreibung = beschreibung;
 		this.preis = preis;
+	}
+	
+	//Mit Bild
+	public Artikel(int id, String name, String beschreibung, double preis, String imagePath) {
+		this.id = id;
+		this.name = name;
+		this.beschreibung = beschreibung;
+		this.preis = preis;
+		
+		this.bild = imagePath;
 	}
 
 	public int getId() {
@@ -43,6 +62,16 @@ public class Artikel {
 
 	public void setPreis(double preis) {
 		this.preis = preis;
+	}
+	
+	
+
+	public String getBild() {
+		return this.bild;
+	}
+
+	public void setBild(String bild) {
+		this.bild = bild;
 	}
 
 	@Override

@@ -21,13 +21,18 @@
 
 
         <!--ERSTELLTE ARTIKEL ANZEIGEN-->
-        <div th:each="artikel : ${artikelListe}" class="card mt-3" style="width: 18rem;">
-            <div class="card-body">
-                <h5 th:text="${artikel.name}" class="card-title"></h5>
-                <h6 th:text="${artikel.beschreibung}" class="card-subtitle mb-2 text-muted"></h6>
-                <p th:text="${artikel.preis}" class="card-text"></p>
-                <a th:href="${artikel.id}" class="card-link">Link</a>
-                <!--<a href="#" class="card-link">Another link</a>-->
+        <div class="row align-items-center">
+            <div th:each="artikel : ${artikelListe}" class="col">
+                <a th:href="@{'/artikel/' + ${artikel.id}}" class="card-link">
+                    <div class="card mt-3" style="width: 18rem;">
+                        <img th:src="${artikel.bild}" class="card-img-top"  alt="Artikel Bild">
+                        <div class="card-body">
+                            <h5 th:text="${artikel.name}" class="card-title"></h5>
+                            <h6 th:text="${artikel.beschreibung}" class="card-subtitle mb-2 text-muted"></h6>
+                            <p th:text="${artikel.preis}" class="card-text"></p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
 

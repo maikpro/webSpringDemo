@@ -8,6 +8,7 @@
 <body>
     <div th:replace="~{fragments/nav :: nav}"></div>
     <div class="container">
+        <img th:src="${artikel.bild}" alt="Artikel Bild" style="width: 400px;">
         <h1 th:text="${artikel.name}"></h1>
         <p th:text="${artikel.beschreibung}"></p>
         <h6 th:text="${artikel.preis}"></h6>

@@ -36,6 +36,24 @@ function artikelInWarenkorbLegen(){
     anzahlImWarenkorbErhoehen();
 }
 
+function successAlertAnzeigen(){
+    var successAlert = document.getElementById("warenkorbSuccessAlert");
+    successAlert.style.display = "block";
+    hideAlert(successAlert);
+}
+
+function failAlertAnzeigen(){
+    var failAlert = document.getElementById("warenkorbFailAlert");
+    failAlert.style.display = "block";
+    hideAlert(failAlert);
+}
+
+function hideAlert(alertBox){
+    setTimeout(function(){ 
+        alertBox.style.display = "none";
+    }, 5000);
+}
+
 //HTTP POST REQUEST
 function setArtikelInWarenkorb(id){
     console.log("setArtikelInWarenkorb wird ausgeführt...");
@@ -46,8 +64,10 @@ function setArtikelInWarenkorb(id){
         if( request.readyState == 4){
             if(request.status == 200){
                 console.log('Response: ' + request.responseText);
+                successAlertAnzeigen();
             } else {
                 console.error('Error: ' + request.status);
+                failAlertAnzeigen()
             }
         }
     }

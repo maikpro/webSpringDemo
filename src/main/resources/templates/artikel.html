@@ -15,8 +15,12 @@
         <p th:text="${artikel.beschreibung}"></p>
         <h6 th:text="${artikel.preis}"></h6>
         
+        <!--In den Warenkorb hinzufügen-->
         <button class="btn btn-dark" type="button" onclick="artikelInWarenkorbLegen()">In den Warenkorb</button>
-
+        
+        <!--Alert!-->
+        <div id="warenkorbSuccessAlert" class="alert alert-success" role="alert" style="display: none;"> Der Artikel wurde in den Warenkorb gelegt!</div>
+        <div id="warenkorbFailAlert" class="alert alert-danger" role="alert" style="display: none;">Es ist ein Fehler aufgetreten!</div>
         
     </div>
     <script>

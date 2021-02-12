@@ -37,4 +37,12 @@ public class Warenkorb {
 		}
 		
 	}
+	
+	public double preisInsgesamt() {
+		double ergebnis=0;
+		for(Artikel artikel : this.artikelImWarenkorb) {
+			ergebnis += artikel.getPreis();
+		}
+		return ergebnis;
+	}
 }

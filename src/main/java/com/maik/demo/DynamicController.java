@@ -74,8 +74,11 @@ public class DynamicController {
 	@GetMapping("/warenkorb")
 	public String warenkorb(@SessionAttribute("warenkorb") Warenkorb warenkorb, Model model) {
 		model.addAttribute("artikelAusWarenkorb", warenkorb.getArtikelImWarenkorb());
+		model.addAttribute("gesamtPreis", warenkorb.preisInsgesamt());
 		return "warenkorb";
 	}
+	
+	
 	
 	
 }

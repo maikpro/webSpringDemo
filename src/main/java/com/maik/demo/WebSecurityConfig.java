@@ -22,6 +22,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+				.cors()		//
+				.and()		//
+				.csrf()		//
+				.disable() // Dieser Part wird für den http POST ausgeschaltet!
+				
 				.authorizeRequests()
 							//.antMatchers("/", "/home").permitAll()
 							.anyRequest().authenticated()
@@ -41,10 +46,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//UserDetails userDetails = User.withUsername("maik");
 		UserDetails userdata =
 				User.withDefaultPasswordEncoder()
-						.username("maik")
-						.password("maik")
-						.roles("USER")
+						.username("admin")
+						.password("admin")
+						.roles("ADMIN")
 						.build();
 		return new InMemoryUserDetailsManager(userdata);
 	}
+	
+	
 }

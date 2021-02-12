@@ -1,11 +1,5 @@
 package com.maik.demo.entity;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 public class Artikel {
 	private int id;
 	private String name;

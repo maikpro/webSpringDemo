@@ -1,4 +1,4 @@
-package com.maik.demo;
+package com.ooad.demo.controller;
 
 import java.security.Principal;
 import java.util.Date;
@@ -10,7 +10,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
-import com.maik.demo.entity.ChatNachricht;
+import com.ooad.demo.entity.ChatNachricht;
 
 /*
  * Quellen: 
@@ -34,9 +34,11 @@ public class ChatController {
 		System.out.println("User: " + user);
 		System.out.println("Nachricht: " + nachricht.getInhalt());
 		
-		//simpMessagingTemplate.convertAndSendToUser(user.getName(), "/user/" + sessionId +"/queue/messages", nachricht.getInhalt());
+		//simpMessagingTemplate.convertAndSendToUser("admin", "/user/" + sessionId +"/queue/messages", nachricht.getInhalt());
 		simpMessagingTemplate.convertAndSend("/user/" + sessionId + "/queue/messages", nachricht.getInhalt() + new Date());
-		//Die Nachricht wird an den User maik an die URL /queue/messages geschickt!
+		
+		//Die Nachricht wird an den User admin an die URL /queue/messages geschickt!
+		//simpMessagingTemplate.convertAndSendToUser("admin", "/chat", nachricht.getInhalt());
 		
 	}
 }

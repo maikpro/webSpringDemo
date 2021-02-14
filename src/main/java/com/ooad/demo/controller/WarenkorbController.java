@@ -1,4 +1,4 @@
-package com.maik.demo;
+package com.ooad.demo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.maik.demo.entity.Artikel;
-import com.maik.demo.entity.ArtikelLager;
-import com.maik.demo.entity.Warenkorb;
+import com.ooad.demo.entity.Artikel;
+import com.ooad.demo.entity.ArtikelLager;
+import com.ooad.demo.entity.Warenkorb;
 
 //Quelle: https://spring.io/guides/tutorials/rest/ , abgerufen am 12.02.2021
 //Quelle: https://www.javadevjournal.com/spring-mvc/spring-mvc-session-attributes/ , abgerufen am 12.02.2021

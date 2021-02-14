@@ -1,4 +1,4 @@
-package com.maik.demo.entity;
+package com.ooad.demo.entity;
 
 public class Artikel {
 	private int id;

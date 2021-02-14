@@ -1,6 +1,4 @@
-package com.maik.demo;
-
-import java.util.ArrayList;
+package com.ooad.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,13 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.maik.demo.entity.Artikel;
-import com.maik.demo.entity.ArtikelLager;
-import com.maik.demo.entity.Warenkorb;
+import com.ooad.demo.entity.Artikel;
+import com.ooad.demo.entity.ArtikelLager;
+import com.ooad.demo.entity.Warenkorb;
 
 @Controller
 @SessionAttributes("ArtikelImLager")
-public class DynamicController {
+public class BasicRoutingController {
 	
 	@ModelAttribute("ArtikelImLager")
 	public ArtikelLager artikelLager() {
@@ -50,10 +48,7 @@ public class DynamicController {
 	@GetMapping("/about")
 	public String about(Model model) {
 		String aboutText = "Das ist der About Text";
-		
 		model.addAttribute("aboutText", aboutText);
-		
-		
 		return "about"; //Ausgabe von about.html
 	}
 	

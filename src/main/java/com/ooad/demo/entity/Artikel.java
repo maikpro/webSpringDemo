@@ -7,17 +7,9 @@ import javax.validation.constraints.Size;
 public class Artikel {
 	private static int idCount = 0;
 	private int id;
-	
-	@NotNull
-	@Size(min=3, max=255)
 	private String name;
-	
-	@NotNull
-	@Size(min=5, max=255)
 	private String beschreibung;
-	
 	private double preis;
-	
 	private String bild;
 	
 	public Artikel() {
@@ -74,8 +66,6 @@ public class Artikel {
 		this.preis = preis;
 	}
 	
-	
-
 	public String getBild() {
 		return this.bild;
 	}

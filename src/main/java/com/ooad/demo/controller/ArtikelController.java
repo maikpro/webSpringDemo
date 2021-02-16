@@ -43,6 +43,7 @@ public class ArtikelController implements WebMvcConfigurer {
 		System.out.println("Daten: " + neuerArtikel.toString() );
 		artikelLager.neuenArtikelHinzufuegen(neuerArtikel);
 		
+		
 		return "Artikel: '"+ neuerArtikel.toString() +"' wurde erstellt";
 	}
 	

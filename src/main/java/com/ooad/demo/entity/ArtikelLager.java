@@ -28,4 +28,9 @@ public class ArtikelLager {
 	public boolean addArtikel() {
 		return true;
 	}
+
+	public void neuenArtikelHinzufuegen(Artikel neuerArtikel) {
+		this.artikelListe.put(neuerArtikel.getId(), neuerArtikel);
+		
+	}
 }

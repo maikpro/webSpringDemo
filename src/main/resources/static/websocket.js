@@ -34,11 +34,16 @@ function connect(){
 
 function sendMessage(){
     stompClient.send( "/app/chat", {}, JSON.stringify( {'inhalt': $("#inhalt").val()} ) );
+    showOwnMessageInChat( $("#inhalt").val() + " " + new Date());
 }
 
 function showMessageInChat(message){
     console.log(message);
-    $("#chat").append("<tr><td>" + message + "</td></tr>");
+    $("#chat").append("<tr style='text-align: right;'><td>" + message + "</td></tr>");
+}
+
+function showOwnMessageInChat(message){
+    $("#chat").append("<tr><td>Du: " + message + "</td></tr>");
 }
 
 $(function(){

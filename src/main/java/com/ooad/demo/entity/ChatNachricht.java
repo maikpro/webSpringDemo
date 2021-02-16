@@ -2,19 +2,12 @@ package com.ooad.demo.entity;
 
 import java.util.Date;
 
-import nonapi.io.github.classgraph.json.Id;
-
 public class ChatNachricht {
-	@Id
-	private String id;
 	private String inhalt;
 	private Date zeitstempel;
 	
-	public String getId() {
-		return this.id;
-	}
-	public void setId(String id) {
-		this.id = id;
+	public ChatNachricht(){
+		this.zeitstempel=new Date();
 	}
 	
 	public String getInhalt() {
@@ -25,8 +18,5 @@ public class ChatNachricht {
 	}
 	public Date getZeitstempel() {
 		return this.zeitstempel;
-	}
-	public void setZeitstempel(Date zeitstempel) {
-		this.zeitstempel = zeitstempel;
 	}
 }

@@ -42,7 +42,15 @@ public class ChatController {
 		
 		//an bestimmten User
 		//simpMessagingTemplate.convertAndSendToUser(user.getName(), "/chat/messages", "ich: " + nachricht.getInhalt() + " " + new Date());
-		simpMessagingTemplate.convertAndSendToUser("admin", "/chat/messages", user.getName() + ": " + nachricht.getInhalt() + new Date());
+		if( user.getName().equals("admin") ) {
+			//Nachricht an User
+			simpMessagingTemplate.convertAndSendToUser("seller", "/chat/messages", user.getName() + ": " + nachricht.getInhalt() + nachricht.getZeitstempel());
+		} else {
+			//an den Admin Nachricht
+			simpMessagingTemplate.convertAndSendToUser("admin", "/chat/messages", user.getName() + ": " + nachricht.getInhalt() + nachricht.getZeitstempel());
+		}
+		
+		
 		
 		
 		

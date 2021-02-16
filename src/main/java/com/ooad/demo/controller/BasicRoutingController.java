@@ -24,13 +24,13 @@ public class BasicRoutingController {
 	}
 	
 	@GetMapping("/artikel/{id}")
-	//@ResponseBody
 	public String getArtikelById(@ModelAttribute("ArtikelImLager") ArtikelLager artikelLager, @PathVariable("id") int id, Model model) {
 		//return "Artikel: " + this.artikelListe.get(id-1).toString();
-		Artikel viewArtikel = artikelLager.getArtikelListe().get(id-1);
+		Artikel viewArtikel = artikelLager.getArtikelListe().get(id);
 		model.addAttribute("artikel", viewArtikel);
 		return "artikel"; //Ausgabe von artikel.html
 	}
+	
 	
 	@GetMapping("/")
 	public String home( @ModelAttribute("ArtikelImLager") ArtikelLager artikelLager, @RequestParam(name="name", required=false, defaultValue="World") String name, Model model ) {
@@ -59,6 +59,11 @@ public class BasicRoutingController {
 		return "login"; //Ausgabe von login.html
 	}
 	
+	@GetMapping("/artikelEinstellen")
+	public String einstellen(Artikel neuerArtikel) {
+		return "artikelEinstellen";
+	}
+	
 	@GetMapping("/chat")
 	public String chat(Model model) {
 		String chatText = "Das ist der Chat!";
@@ -71,6 +76,11 @@ public class BasicRoutingController {
 		model.addAttribute("artikelAusWarenkorb", warenkorb.getArtikelImWarenkorb());
 		model.addAttribute("gesamtPreis", warenkorb.preisInsgesamt());
 		return "warenkorb";
+	}
+	
+	@GetMapping("/error")
+	public String error() {
+		return "error";
 	}
 	
 	

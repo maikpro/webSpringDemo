@@ -9,14 +9,6 @@
 <body>
     <div th:replace="~{fragments/nav :: nav}"></div>
     <div class="container">
-        <!--<p th:text=" 'Hello, ' + ${name} + '!' " />-->
-        <p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
-        
-        <!-- LOGOUT -->
-        <form th:action="@{/logout}" method="POST">
-            <button type="submit" class="btn btn-danger">Logout</button>
-        </form>
-        
         <!--<p th:text=" ${willkommen} " />
         <p th:text=" 'Number:' + ${num} " /> -->
 

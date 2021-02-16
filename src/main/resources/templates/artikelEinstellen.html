@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Demo für OOAD</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div th:replace="~{fragments/nav :: nav}"></div>
+    <div class="container">
+        <h1>Artikel einstellen:</h1>
+
+        <!-- Artikel-Daten ausfüllen -->
+        <!-- Quelle: https://spring.io/guides/gs/handling-form-submission/ -->
+        <form id="validateForm" action="/api/artikel/create/" method="POST">
+            <div class="form-row">
+              <!-- Artikel Name-->
+              <div class="form-group col-md-6">
+                <label for="inputArtikelName">Artikel Name:</label>
+                <input id="name" name="name" type="text" class="form-control" placeholder="z.B. T-Shirt">
+              </div>
+
+              <!-- Artikel Beschreibung-->
+              <div class="form-group col-md-6">
+                <label for="inputArtikelName">Artikel Beschreibung:</label>
+                <textarea id="beschreibung" name="beschreibung" class="form-control" rows="4" placeholder="z.B Größe: M, Zustand: Gebraucht, ..."></textarea>
+                
+              </div>
+
+              <!-- Artikel Preis-->
+              <div class="form-group col-md-6">
+                <label for="inputArtikelPreis">Artikel Preis:</label>
+                <input id="preis" name="preis" type="text" class="form-control" placeholder="29.99">
+                
+              </div>
+              
+            </div>
+            
+            <button id="validateButton" class="btn btn-primary">Artikel erstellen</button>
+          </form>
+
+    <script src="/warenkorb.js"></script>
+    <script src="/validation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

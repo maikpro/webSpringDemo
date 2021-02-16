@@ -7,13 +7,13 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="nav">
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="nav">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">SpringDemo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
              <!--HOME-->
               <li class="nav-item">
@@ -35,6 +35,11 @@
                 <a class="nav-link" th:href="@{/chat}">Chat</a>
               </li>
 
+              <!--- Bereich für Verkäufer -->
+              <li sec:authorize="hasRole('SELLER')" class="nav-item">
+                <a class="nav-link" th:href="@{/artikelEinstellen}">Artikel einstellen</a>
+              </li>
+
               <!--Warenkorb-->
               <li class="nav-item">
                 <a class="nav-link" th:href="@{/warenkorb}">
@@ -44,6 +49,28 @@
               </li>
 
 
+              
+
+              <!-- Dropdown Loginarea -->
+              <div class="btn-group" sec:authorize="isAuthenticated()">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  [[${#httpServletRequest.remoteUser}]]!
+                </button>
+                
+                <div class="dropdown-menu" >
+                  <p th:inline="text">Du bist eingeloggt als: [[${#httpServletRequest.remoteUser}]]!</p>
+        
+                  <!-- LOGOUT -->
+                  <div class="dropdown-divider"></div>
+                  <form class="dropdown-item" th:action="@{/logout}" method="POST">
+                      <button type="submit" class="btn btn-danger">Logout</button>
+                  </form>
+                  
+                  
+                </div>
+              </div>
+
+              
             </ul>
               <!--<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +85,11 @@
               </li>-->
           </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       </nav>
 
+      
 </body>
 </html>

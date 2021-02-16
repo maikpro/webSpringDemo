@@ -1,28 +1,44 @@
 package com.ooad.demo.entity;
 
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Artikel {
+	private static int idCount = 0;
 	private int id;
+	
+	@NotNull
+	@Size(min=3, max=255)
 	private String name;
+	
+	@NotNull
+	@Size(min=5, max=255)
 	private String beschreibung;
+	
 	private double preis;
 	
 	private String bild;
 	
-	//Ohne Bild
-	public Artikel(int id, String name, String beschreibung, double preis) {
-		this.id = id;
+	public Artikel() {
+		//wird beim Erstellen verwendet (Bean-backed form= https://spring.io/guides/gs/validating-form-input/ )
+	}
+	
+	//Ohne Bild => Platzhalter wird erstellt.
+	public Artikel(String name, String beschreibung, double preis) {
+		this.id = idCount++;
 		this.name = name;
 		this.beschreibung = beschreibung;
 		this.preis = preis;
+		this.bild = "https://via.placeholder.com/450";
 	}
 	
 	//Mit Bild
-	public Artikel(int id, String name, String beschreibung, double preis, String imagePath) {
-		this.id = id;
+	public Artikel(String name, String beschreibung, double preis, String imagePath) {
+		this.id = idCount++;
 		this.name = name;
 		this.beschreibung = beschreibung;
 		this.preis = preis;
-		
 		this.bild = imagePath;
 	}
 

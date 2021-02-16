@@ -21,8 +21,8 @@ function connect(){
         console.log("session-id: " + url);
         const sessionId = url;
 
-        stompClient.subscribe( "/user/" + sessionId + "/queue/messages", function(message){
-        //stompClient.subscribe( "/user/queue/messages", function(message){
+        //stompClient.subscribe( "/user/" + sessionId + "/queue/messages", function(message){
+        stompClient.subscribe( "/user/chat/messages", function(message){
             console.log("subbbbbb!")
             //showGreeting( JSON.parse(greeting.body).content );
             console.log( message );

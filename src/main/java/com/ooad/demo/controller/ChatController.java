@@ -35,10 +35,18 @@ public class ChatController {
 		System.out.println("Nachricht: " + nachricht.getInhalt());
 		
 		//simpMessagingTemplate.convertAndSendToUser("admin", "/user/" + sessionId +"/queue/messages", nachricht.getInhalt());
-		simpMessagingTemplate.convertAndSend("/user/" + sessionId + "/queue/messages", nachricht.getInhalt() + new Date());
+		//simpMessagingTemplate.convertAndSend("/user/" + sessionId + "/queue/messages", nachricht.getInhalt() + new Date());
 		
-		//Die Nachricht wird an den User admin an die URL /queue/messages geschickt!
-		//simpMessagingTemplate.convertAndSendToUser("admin", "/chat", nachricht.getInhalt());
+		//an alle Nachricht schicken!
+		//simpMessagingTemplate.convertAndSend("/user/queue/messages", nachricht.getInhalt() + new Date());
+		
+		//an bestimmten User
+		//simpMessagingTemplate.convertAndSendToUser(user.getName(), "/chat/messages", "ich: " + nachricht.getInhalt() + " " + new Date());
+		simpMessagingTemplate.convertAndSendToUser("admin", "/chat/messages", user.getName() + ": " + nachricht.getInhalt() + new Date());
+		
+		
+		
+		
 		
 	}
 }

@@ -35,9 +35,7 @@ public class WarenkorbController {
 		System.out.println("Artikel mit der ID: '" + parsedId + "' wurde hinzugefügt");
 		
 		//warenkorb.artikelHinzufuegen( new Artikel(parsedId,"Test123","kp", 9999.99) );
-		warenkorb.artikelHinzufuegen( artikelLager.getArtikelListe().get(parsedId-1) ); //Minus 1, da artikelId bei 1 startet!!!
+		warenkorb.artikelHinzufuegen( artikelLager.getArtikelListe().get(parsedId) ); 
 		return "Artikel mit ID '" + id + "' hinzugefügt!";
-	}
-	
-	
+	}	
 }

@@ -35,7 +35,8 @@ public class WarenkorbController {
 		System.out.println("Artikel mit der ID: '" + parsedId + "' wurde hinzugefügt");
 		
 		//warenkorb.artikelHinzufuegen( new Artikel(parsedId,"Test123","kp", 9999.99) );
-		warenkorb.artikelHinzufuegen( artikelLager.getArtikelListe().get(parsedId) ); 
+		//warenkorb.artikelHinzufuegen( artikelLager.getArtikelListe().get(parsedId) ); 
+		warenkorb.artikelHinzufuegen( artikelLager.getArtikelMap().get(parsedId));
 		return "Artikel mit ID '" + id + "' hinzugefügt!";
 	}	
 }

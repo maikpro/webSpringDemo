@@ -17,16 +17,19 @@ import com.ooad.demo.entity.Warenkorb;
 @Controller
 @SessionAttributes("ArtikelImLager")
 public class BasicRoutingController {
+	private ArtikelLager artikelLager =  new ArtikelLager();
 	
 	@ModelAttribute("ArtikelImLager")
 	public ArtikelLager artikelLager() {
-		return new ArtikelLager();
+		//return new ArtikelLager();
+		return artikelLager;
 	}
 	
 	@GetMapping("/artikel/{id}")
 	public String getArtikelById(@ModelAttribute("ArtikelImLager") ArtikelLager artikelLager, @PathVariable("id") int id, Model model) {
 		//return "Artikel: " + this.artikelListe.get(id-1).toString();
-		Artikel viewArtikel = artikelLager.getArtikelListe().get(id);
+		//Artikel viewArtikel = artikelLager.getArtikelListe().get(id);
+		Artikel viewArtikel = artikelLager.getArtikelMap().get(id);
 		model.addAttribute("artikel", viewArtikel);
 		return "artikel"; //Ausgabe von artikel.html
 	}

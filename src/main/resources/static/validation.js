@@ -11,6 +11,7 @@ var artikelnameInput = document.getElementById("name");
 var artikelbeschreibungInput = document.getElementById("beschreibung");
 var artikelPreisInput = document.getElementById("preis");
 
+//Wenn der Button Artikel einstellen geklickt wird:
 button.addEventListener("click", function(e){
     console.log("button clicked!");
     e.preventDefault(); //Seite nicht aktualisieren nach submit!
@@ -19,6 +20,7 @@ button.addEventListener("click", function(e){
 } );
 
 //Artikel: Name, Beschreibung, Preis validieren
+//Überprüfe die Form, ob sie im gewollten Format ist.
 function checkForm(){
     if( textValidate(artikelnameInput.value) ){
         if( textValidate(artikelbeschreibungInput.value) ){
@@ -33,7 +35,7 @@ function checkForm(){
     }
 }
 
-//
+//Texteingaben prüfen
 function textValidate(textFromInput){
     if( textFromInput === '' || textFromInput === null || textFromInput.length < 5){
         return false;
@@ -42,6 +44,7 @@ function textValidate(textFromInput){
     }
 }
 
+//Preiseingabe prüfen, ob der Preis mit . anstatt , eingegeben wurde.
 function preisValidate(preisFromInput){
     if( preisFromInput === '' || preisFromInput === null){
         return false;

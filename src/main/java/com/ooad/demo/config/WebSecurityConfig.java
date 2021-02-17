@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	/**
 	 * Die Konfiguration für die Authentifizierung der jeweiligen Accounts werden hier vorgenommen.
-	 * @param auth mit Hilfe des AuthenticationManagerBuilders werden die drei Accounts ("admin", "seller" und "support") erstellt mit ihren jeweiligen Rollen.
+	 * @param auth mit Hilfe des AuthenticationManagerBuilders werden die drei Accounts ("admin", "seller" und "support") mit ihren jeweiligen Rollen erstellt .
 	 */
 	@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

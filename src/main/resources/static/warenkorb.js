@@ -1,3 +1,8 @@
+/** warenkorb.js
+ * @author Maik Proba(Hauptverantwortlich), Marcel Sauer, Hafiyyan Teh
+ * @version 1.0
+ */
+
 console.log("Skript eingebunden!");
 
 var warenkorbAnzahl = document.getElementById("warenkorbAnzahl");
@@ -5,6 +10,7 @@ var warenkorbAnzahl = document.getElementById("warenkorbAnzahl");
 aktualisiereWarenkorbImClient();
 
 //HTTP GET REQUEST
+/*Die Anzahl des Warenkorb-Zählers */
 function aktualisiereWarenkorbImClient(){
     console.log("aktualisiereWarenkorbImClient wird ausgeführt...");
     var request = new XMLHttpRequest();

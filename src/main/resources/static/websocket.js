@@ -1,3 +1,8 @@
+/** websocket.js
+ * @author Maik Proba(Hauptverantwortlich), Marcel Sauer, Hafiyyan Teh
+ * @version 1.0
+ */
+
 //Simple (or Streaming) Text Orientated Messaging Protocol.
 var stompClient = null;
 connect(); //beim Aufruf der Seite mit WebSocket verbinden!

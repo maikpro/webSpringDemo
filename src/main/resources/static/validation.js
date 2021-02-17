@@ -1,3 +1,8 @@
+/** validation.js
+ * @author Maik Proba(Hauptverantwortlich), Marcel Sauer, Hafiyyan Teh
+ * @version 1.0
+ */
+
 console.log("validierung eingebunden!");
 
 var form = document.getElementById("validateForm");

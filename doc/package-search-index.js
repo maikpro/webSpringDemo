@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.maik.demo"},{"l":"com.ooad.demo"},{"l":"com.ooad.demo.config"},{"l":"com.ooad.demo.controller"},{"l":"com.ooad.demo.entity"}]

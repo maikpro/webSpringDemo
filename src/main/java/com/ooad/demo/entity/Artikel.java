@@ -1,8 +1,10 @@
 package com.ooad.demo.entity;
 
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+/** Artikel
+ * @author Hafiyyan Teh (Hauptverantwortlich), Maik Proba, Marcel Sauer
+ * @version 1.0
+ */
 
 public class Artikel {
 	private static int idCount = 0;
@@ -12,11 +14,13 @@ public class Artikel {
 	private double preis;
 	private String bild;
 	
-	public Artikel() {
-		//wird beim Erstellen verwendet (Bean-backed form= https://spring.io/guides/gs/validating-form-input/ )
-	}
 	
-	//Ohne Bild => Platzhalter wird erstellt.
+	/**
+	 * Hierbei ist das Bild des Artikels ein Platzhalter
+	 * @param name: Name des Artikels.
+	 * @param beschreibung: Beschreibung des Artikels.
+	 * @param preis: Preis des Artikels.
+	 */
 	public Artikel(String name, String beschreibung, double preis) {
 		this.id = idCount++;
 		this.name = name;
@@ -25,7 +29,13 @@ public class Artikel {
 		this.bild = "https://via.placeholder.com/450";
 	}
 	
-	//Mit Bild
+	/**
+	 * Hierbei ist das Bild des Artikels eine URL, die beim erstellen übergeben werden kann.
+	 * @param name: Name des Artikels.
+	 * @param beschreibung: Beschreibung des Artikels.
+	 * @param preis: Preis des Artikels.
+	 * @param imagePath: die URL die zur Bild-Datei führt.
+	 */
 	public Artikel(String name, String beschreibung, double preis, String imagePath) {
 		this.id = idCount++;
 		this.name = name;
@@ -34,46 +44,89 @@ public class Artikel {
 		this.bild = imagePath;
 	}
 
+	/**
+	 * 
+	 * @return gibt die id zurück.
+	 */
 	public int getId() {
 		return this.id;
 	}
 
+	/**
+	 * 
+	 * @param id setzt die Id.
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/**
+	 * 
+	 * @return gibt den Artikelnamen des Artikels zurück.
+	 */
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * 
+	 * @param name setze den Artikelnamen des Artikels
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	/**
+	 * 
+	 * @return gibt die Beschreibung des Artikels zurück.
+	 */
 	public String getBeschreibung() {
 		return this.beschreibung;
 	}
-
+	
+	/**
+	 * 
+	 * @param beschreibung setzt die Beschreibung des Artikels
+	 */
 	public void setBeschreibung(String beschreibung) {
 		this.beschreibung = beschreibung;
 	}
 
+	/**
+	 * 
+	 * @return gibt den Preis des Artikels zurück.
+	 */
 	public double getPreis() {
 		return this.preis;
 	}
 
+	/**
+	 * 
+	 * @param preis setzt den Preis des Artikels.
+	 */
 	public void setPreis(double preis) {
 		this.preis = preis;
 	}
 	
+	/**
+	 * 
+	 * @return gibt das Bild des Artikels zurück.
+	 */
 	public String getBild() {
 		return this.bild;
 	}
 
+	/**
+	 * 
+	 * @param bild setzt das Bild des Artikels.
+	 */
 	public void setBild(String bild) {
 		this.bild = bild;
 	}
 
+	/**
+	 * @return gibt den gesamten Artikel als String aus.
+	 */
 	@Override
 	public String toString() {
 		return "Artikel [getId()=" + getId() + ", getName()=" + getName() + ", getBeschreibung()=" + getBeschreibung()

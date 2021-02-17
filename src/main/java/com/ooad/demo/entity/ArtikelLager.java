@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/** ArtikelLager
+ * @author Marcel Sauer(Hauptverantwortlich), Hafiyyan Teh , Maik Proba
+ * @version 1.0
+ */
+
 public class ArtikelLager {
 	private Map<Integer,Artikel> artikelListe;
 	
@@ -18,17 +23,27 @@ public class ArtikelLager {
 		this.artikelListe.put(artikel3.getId(),artikel3);
 	}
 
+	/**
+	 * 
+	 * @return gibt ArtikelListe aus.
+	 */
 	public ArrayList<Artikel> getArtikelListe() {
 		ArrayList<Artikel> list = new ArrayList<Artikel>(artikelListe.values());
 		return list;
 	}
+	
+	/**
+	 * 
+	 * @return gibt die ArtikelListe als Map aus.
+	 */
 	public Map<Integer,Artikel> getArtikelMap() {
 		return this.artikelListe;
 	}
-	public boolean addArtikel() {
-		return true;
-	}
-
+	
+	/**
+	 * 
+	 * @param neuerArtikel wird in die Map eingefügt.
+	 */
 	public void neuenArtikelHinzufuegen(Artikel neuerArtikel) {
 		this.artikelListe.put(neuerArtikel.getId(), neuerArtikel);
 		

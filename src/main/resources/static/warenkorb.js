@@ -59,7 +59,6 @@ function setArtikelInWarenkorb(id){
     console.log("setArtikelInWarenkorb wird ausgeführt...");
     var request = new XMLHttpRequest();
     request.open("POST", "/api/set/warenkorb/", true);
-    
     request.onreadystatechange = function(){        
         if( request.readyState == 4){
             if(request.status == 200){
@@ -71,7 +70,6 @@ function setArtikelInWarenkorb(id){
             }
         }
     }
-    
     console.log("Artikel id ist: " + id)
     //Sende ID ins Backend!
     request.send(id);
